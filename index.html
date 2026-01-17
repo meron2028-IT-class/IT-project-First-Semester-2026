@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haile-Manas Academy - Wellness Center</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/logo.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with School Identity -->
+        <header class="wellness-header">
+            <div class="school-branding">
+                <div class="logo-container">
+                    <img src="/static/logo.png" alt="Haile-Manas Academy Logo" class="school-logo">
+                </div>
+                <div class="school-info">
+                    <h1>Haile-Manas Academy</h1>
+                    <h2>Student Wellness Center</h2>
+                    <p class="school-motto">Addis Ababa, Ethiopia | January 2026</p>
+                </div>
+            </div>
+            <div class="header-quote">
+                <p><i class="fas fa-quote-left"></i> Educating mind, body, and spirit for Ethiopia's future <i class="fas fa-quote-right"></i></p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="welcome-section">
+                <h3><i class="fas fa-stethoscope"></i> Symptom Assessment Tool</h3>
+                <p class="intro-text">This tool helps Haile-Manas students identify common health concerns. Select any symptoms you're experiencing to receive guidance on potential conditions and appropriate next steps within our campus healthcare system.</p>
+                
+                <div class="disclaimer-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                    <p>This is a <strong>preliminary guidance tool only</strong> for Haile-Manas Academy students. It does NOT replace professional medical advice. Always consult with the school nurse or a healthcare professional for proper diagnosis and treatment.</p>
+                </div>
+            </div>
+
+            <!-- Symptom Checker Form -->
+            <form method="POST" class="symptom-form" id="symptomForm">
+                <div class="form-section">
+                    <h4><i class="fas fa-clipboard-list"></i> Select Your Symptoms:</h4>
+                    <p class="form-instruction">Check all symptoms that apply to you</p>
+                    
+                    <div class="symptoms-grid">
+                        <!-- Row 1 -->
+                        <label class="symptom-option">
+                            <input type="checkbox" name="symptoms" value="fever">
+                            <span class="checkmark"></span>
+                            <span class="symptom-text">
+                                <i class="fas fa-thermometer-full symptom-icon"></i>
+                                <strong>Fever</strong>
+                                <small>Elevated body temperature</small>
+                            </span>
+                        </label>
+                        
+                        <label class="symptom-option">
+                            <input type="checkbox" name="symptoms" value="cough">
+                            <span class="checkmark"></span>
+                            <span class="symptom-text">
+                                <i class="fas fa-lungs symptom-icon"></i>
+                                <strong>Cough</strong>
+                                <small>Persistent or dry cough</small>
+                            </span>
+                        </label>
+                        
+                        <label class="symptom-option">
+                            <input type="checkbox" name="symptoms" value="headache">
+                            <span class="checkmark"></span>
+                            <span class="symptom-text">
+                                <i class="fas fa-head-side-virus symptom-icon"></i>
+                                <strong>Headache</strong>
+                                <small>Persistent head pain</small>
+                            </span>
+                        </label>
+                        
+                        <!-- Row 2 -->
+                        <label class="symptom-option">
+                            <input type="checkbox" name="symptoms" value="sore_throat">
+                            <span class="checkmark"></span>
+                            <span class="symptom-text">
+                                <i class="fas fa-throat symptom-icon"></i>
+                                <strong>Sore Throat</strong>
+                                <small>Pain when swallowing</small>
+                            </span>
+                        </label>
+                        
+                        <label class="symptom-option">
+                            <input type="checkbox" name="symptoms" value="fatigue">
+                            <span class="checkmark"></span>
+                            <span class="symptom-text">
+                                <i class="fas fa-tired symptom-icon"></i>
+                                <strong>Fatigue</strong>
+                                <small>Unusual tiredness</small>
+                            </span>
+                        </label>
+                        
+                        <label class="symptom-option">
+                            <input type="checkbox" name="symptoms" value="nausea">
+                            <span class="checkmark"></span>
+                            <span class="symptom-text">
+                                <i class="fas fa-stomach symptom-icon"></i>
+                                <strong>Nausea</strong>
+                                <small>Upset stomach</small>
+                            </span>
+                        </label>
+                        
+                        <!-- Row 3 -->
+                        <label class="symptom-option">
+                            <input type="checkbox" name="symptoms" value="body_aches">
+                            <span class="checkmark"></span>
+                            <span class="symptom-text">
+                                <i class="fas fa-bone symptom-icon"></i>
+                                <strong>Body Aches</strong>
+                                <small>Muscle or joint pain</small>
+                            </span>
+                        </label>
+                        
+                        <label class="symptom-option">
+                            <input type="checkbox" name="symptoms" value="runny_nose">
+                            <span class="checkmark"></span>
+                            <span class="symptom-text">
+                                <i class="fas fa-wind symptom-icon"></i>
+                                <strong>Runny Nose</strong>
+                                <small>Nasal congestion</small>
+                            </span>
+                        </label>
+                        
+                        <label class="symptom-option">
+                            <input type="checkbox" name="symptoms" value="chills">
+                            <span class="checkmark"></span>
+                            <span class="symptom-text">
+                                <i class="fas fa-snowflake symptom-icon"></i>
+                                <strong>Chills</strong>
+                                <small>Feeling cold/shivering</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-analysis"></i> Assess Symptoms
+                    </button>
+                    <button type="button" class="clear-btn" onclick="clearForm()">
+                        <i class="fas fa-eraser"></i> Clear Selection
+                    </button>
+                </div>
+            </form>
+
+            <!-- Results Section (Only shown after form submission) -->
+            {% if results %}
+            <div class="results-section">
+                <div class="results-header">
+                    <h3><i class="fas fa-clipboard-check"></i> Assessment Results</h3>
+                    <div class="timestamp"> date </div>
+                </div>
+                
+                <div class="results-container">
+                    <div class="probability-section">
+                        <h4><i class="fas fa-chart-line"></i> Possible Conditions</h4>
+                        <p class="results-note">Based on your selected symptoms, here are the most likely conditions:</p>
+                        
+                        <div class="disease-cards">
+                            {% for disease, percent in results %}
+                            <div class="disease-card {% if loop.index == 1 %}primary-card{% endif %}">
+                                <div class="disease-header">
+                                    <h5>disease </h5>
+                                    <div class="probability-badge">percent % match</div>
+                                </div>
+                                <div class="probability-bar">
+                                   
+                                </div>
+                                <div class="disease-description">
+                                    <!-- Descriptions will be added by your Python logic -->
+                                    Consult with school nurse for details
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <div class="recommendation-section">
+                        <h4><i class="fas fa-hand-holding-medical"></i> Recommended Actions</h4>
+                        <div class="recommendation-card">
+                            <div class="recommendation-icon">
+                                {% if "URGENT" in recommendation %}
+                                <i class="fas fa-exclamation-circle urgent-icon"></i>
+                                {% else %}
+                                <i class="fas fa-shield-alt"></i>
+                                {% endif %}
+                            </div>
+                            <div class="recommendation-content">
+                                <h5>Primary Recommendation</h5>
+                                <p>{{ recommendation }}</p>
+                                
+                                <div class="next-steps">
+                                    <h6><i class="fas fa-footsteps"></i> Next Steps at HMA:</h6>
+                                    <ul>
+                                        <li><i class="fas fa-user-nurse"></i> <strong>Visit School Nurse:</strong> Health Center, Main Administration Building</li>
+                                        <li><i class="fas fa-clock"></i> <strong>Hours:</strong> 7:00 AM - 9:00 PM daily</li>
+                                        <li><i class="fas fa-phone-alt"></i> <strong>Emergency Contact:</strong> Campus Security: 9111 or Nurse: 9123</li>
+                                        <li><i class="fas fa-house-medical"></i> <strong>Isolation Dorms:</strong> Available for contagious conditions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="final-disclaimer">
+                    <p><i class="fas fa-info-circle"></i> This assessment is for Haile-Manas Academy students only. The school nurse makes final determinations regarding student health, medication, and isolation requirements according to Ethiopian health guidelines.</p>
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Wellness Resources -->
+            <div class="resources-section">
+                <h4><i class="fas fa-heart"></i> HMA Wellness Resources</h4>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <i class="fas fa-user-md"></i>
+                        <h5>School Nurse</h5>
+                        <p>Certified nurse available for consultations and basic treatment</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-bed"></i>
+                        <h5>Health Dormitory</h5>
+                        <p>Separate dorm for students needing medical isolation</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-utensils"></i>
+                        <h5>Nutrition Support</h5>
+                        <p>Special dietary plans when medically required</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-ambulance"></i>
+                        <h5>Local Hospital</h5>
+                        <p>Partnership with Addis Ababa General Hospital for emergencies</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="wellness-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>Haile-Manas Academy Wellness Center</h4>
+                    <p>Part of Ethiopia Education Initiatives | January 2026</p>
+                    <p class="ethiopian-flag">🇪🇹 Serving Ethiopia's future leaders since 2022</p>
+                </div>
+                <div class="footer-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Health Center, Main Administration Building</p>
+                    <p><i class="fas fa-clock"></i> 7:00 AM - 9:00 PM Daily</p>
+                    <p><i class="fas fa-phone"></i> Campus Extensions: Nurse (9123), Security (9111)</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2026 Haile-Manas Academy, Addis Ababa, Ethiopia. This tool is for internal educational use by students and staff.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple form clearing function
+        function clearForm() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+                // Remove visual selection
+                const parentLabel = checkbox.closest('.symptom-option');
+                if (parentLabel) {
+                    parentLabel.classList.remove('selected');
+                }
+            });
+        }
+        
+        // Add visual feedback when selecting symptoms
+        document.querySelectorAll('.symptom-option').forEach(option => {
+            const checkbox = option.querySelector('input[type="checkbox"]');
+            
+            // Set initial state
+            if (checkbox.checked) {
+                option.classList.add('selected');
+            }
+            
+            // Listen for changes
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    option.classList.add('selected');
+                } else {
+                    option.classList.remove('selected');
+                }
+            });
+        });
+        
+        // Form validation
+        document.getElementById('symptomForm').addEventListener('submit', function(e) {
+            const checkboxes = this.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkboxes.length === 0) {
+                e.preventDefault();
+                alert('Please select at least one symptom before submitting.');
+                return false;
+            }
+            return true;
+        });
+    </script>
+</body>
+</html>

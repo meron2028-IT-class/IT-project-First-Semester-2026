@@ -1,0 +1,716 @@
+/* ===== HAILE-MANAS ACADEMY WELLNESS CENTER ===== */
+/* Clean, modern, professional design - January 2026 */
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Professional HMA Color Palette */
+    --hma-navy: #1a365d;
+    --hma-blue: #2c5282;
+    --hma-light-blue: #4299e1;
+    --hma-cream: #f7fafc;
+    --hma-gray: #4a5568;
+    --hma-light-gray: #e2e8f0;
+    --hma-white: #ffffff;
+    --hma-accent: #38b2ac; /* Teal accent */
+    --hma-warning: #ed8936;
+    --hma-alert: #e53e3e;
+    --hma-success: #48bb78;
+    
+    /* Typography */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: 'Georgia', 'Times New Roman', serif;
+    --font-mono: 'Courier New', monospace;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--hma-gray);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* ===== CONTAINER & LAYOUT ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--hma-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid var(--hma-light-gray);
+}
+
+/* ===== HEADER - PROFESSIONAL ===== */
+.wellness-header {
+    background: var(--hma-navy);
+    color: var(--hma-white);
+    padding: 30px 40px;
+    border-bottom: 4px solid var(--hma-accent);
+}
+
+.school-branding {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 15px;
+}
+
+.logo-container {
+    width: 80px;
+    height: 80px;
+    background: var(--hma-white);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.school-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.school-info {
+    flex: 1;
+}
+
+.school-info h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--hma-white);
+}
+
+.school-info h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--hma-light-blue);
+    margin-bottom: 8px;
+}
+
+.school-motto {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.header-quote {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-style: italic;
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+.main-content {
+    padding: 40px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--hma-light-gray);
+}
+
+.welcome-section h3 {
+    color: var(--hma-navy);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-section h3 i {
+    color: var(--hma-accent);
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--hma-gray);
+    margin-bottom: 25px;
+    max-width: 800px;
+}
+
+/* Disclaimer Box */
+.disclaimer-box {
+    background: #fff8e1;
+    border-left: 4px solid var(--hma-warning);
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 25px;
+}
+
+.disclaimer-box h4 {
+    color: var(--hma-warning);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.disclaimer-box p {
+    color: #5d4037;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===== SYMPTOM CHECKER FORM ===== */
+.symptom-form {
+    background: var(--hma-cream);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid var(--hma-light-gray);
+}
+
+.form-section h4 {
+    color: var(--hma-navy);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-instruction {
+    color: var(--hma-gray);
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* Symptoms Grid */
+.symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.symptom-option {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    background: var(--hma-white);
+    border: 1px solid var(--hma-light-gray);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.symptom-option:hover {
+    border-color: var(--hma-blue);
+    background: #f0f9ff;
+}
+
+.symptom-option.selected {
+    border-color: var(--hma-accent);
+    background: #f0f9ff;
+    box-shadow: 0 2px 8px rgba(56, 178, 172, 0.1);
+}
+
+.symptom-option input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    background: var(--hma-white);
+    border: 2px solid #cbd5e0;
+    border-radius: 4px;
+    margin-right: 15px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.symptom-option:hover .checkmark {
+    border-color: var(--hma-blue);
+}
+
+.symptom-option input:checked ~ .checkmark {
+    background: var(--hma-accent);
+    border-color: var(--hma-accent);
+}
+
+.symptom-option input:checked ~ .checkmark:after {
+    content: "✓";
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.symptom-text {
+    flex: 1;
+}
+
+.symptom-text strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--hma-navy);
+    margin-bottom: 4px;
+}
+
+.symptom-text small {
+    color: #718096;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.symptom-icon {
+    color: var(--hma-blue);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+/* Form Buttons */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding-top: 25px;
+    border-top: 1px solid var(--hma-light-gray);
+}
+
+.submit-btn, .clear-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    min-width: 180px;
+}
+
+.submit-btn {
+    background: var(--hma-blue);
+    color: var(--hma-white);
+}
+
+.submit-btn:hover {
+    background: var(--hma-navy);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clear-btn {
+    background: var(--hma-white);
+    color: var(--hma-gray);
+    border: 1px solid var(--hma-light-gray);
+}
+
+.clear-btn:hover {
+    background: #f8f9fa;
+    border-color: var(--hma-gray);
+}
+
+/* ===== RESULTS SECTION ===== */
+.results-section {
+    background: var(--hma-cream);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid var(--hma-light-gray);
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--hma-light-gray);
+}
+
+.results-header h3 {
+    color: var(--hma-navy);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timestamp {
+    color: var(--hma-gray);
+    font-size: 0.9rem;
+    background: var(--hma-white);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--hma-light-gray);
+}
+
+.results-note {
+    color: var(--hma-gray);
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* Disease Cards */
+.disease-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.disease-card {
+    background: var(--hma-white);
+    border-radius: 6px;
+    padding: 20px;
+    border: 1px solid var(--hma-light-gray);
+    transition: all 0.2s ease;
+}
+
+.disease-card.primary-card {
+    border-left: 4px solid var(--hma-accent);
+    background: var(--hma-white);
+}
+
+.disease-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.disease-header h5 {
+    font-size: 1.2rem;
+    color: var(--hma-navy);
+    font-weight: 600;
+}
+
+.probability-badge {
+    background: var(--hma-blue);
+    color: var(--hma-white);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.probability-bar {
+    height: 8px;
+    background: var(--hma-light-gray);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.probability-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--hma-blue), var(--hma-accent));
+    border-radius: 4px;
+    transition: width 0.8s ease;
+}
+
+.disease-description {
+    color: var(--hma-gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Recommendation Card */
+.recommendation-section {
+    margin-top: 30px;
+}
+
+.recommendation-section h4 {
+    color: var(--hma-navy);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recommendation-card {
+    background: var(--hma-white);
+    border-radius: 8px;
+    padding: 25px;
+    border: 1px solid var(--hma-light-gray);
+}
+
+.recommendation-content h5 {
+    color: var(--hma-navy);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.recommendation-content p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--hma-gray);
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid var(--hma-accent);
+}
+
+.next-steps h6 {
+    color: var(--hma-blue);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.next-steps ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.next-steps li {
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+    color: var(--hma-gray);
+}
+
+.next-steps li:before {
+    content: "•";
+    color: var(--hma-accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.final-disclaimer {
+    background: #fff8e1;
+    border: 1px solid #fed7d7;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #744210;
+    line-height: 1.5;
+}
+
+.final-disclaimer i {
+    color: var(--hma-warning);
+    margin-right: 8px;
+}
+
+/* ===== RESOURCES SECTION ===== */
+.resources-section {
+    padding: 30px;
+    background: var(--hma-cream);
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.resources-section h4 {
+    color: var(--hma-navy);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.resource-card {
+    background: var(--hma-white);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid var(--hma-light-gray);
+    transition: all 0.2s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--hma-accent);
+}
+
+.resource-card i {
+    font-size: 2rem;
+    color: var(--hma-blue);
+    margin-bottom: 15px;
+}
+
+.resource-card h5 {
+    color: var(--hma-navy);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.resource-card p {
+    color: var(--hma-gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ===== FOOTER ===== */
+.wellness-footer {
+    background: var(--hma-navy);
+    color: var(--hma-white);
+    padding: 30px 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-brand h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--hma-white);
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.ethiopian-flag {
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.footer-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+.footer-info i {
+    color: var(--hma-accent);
+    width: 20px;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        border-radius: 0;
+    }
+    
+    .main-content {
+        padding: 25px;
+    }
+    
+    .wellness-header {
+        padding: 20px;
+    }
+    
+    .school-branding {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .school-info h1 {
+        font-size: 1.8rem;
+    }
+    
+    .symptoms-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .submit-btn, .clear-btn {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-info p {
+        justify-content: center;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .symptom-form, .form-actions, .resources-section, .wellness-footer {
+        display: none;
+    }
+    
+    .container {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .results-section {
+        break-inside: avoid;
+    }
+}
