@@ -11,15 +11,6 @@ app = Flask(__name__)
 # Your functions will go here
 # def calculate_disease_probability(selected_symptoms):
 #     pass
-
-@app.route("/", methods=["GET", "POST"])
-def index():
-    # Initialize variables
-    Result = {}
-    results = {}
-    Percentages = set()
-    Top_Three = []
-    Recommendation = {}
     Diseases = {
         "Common Cold": ["runny_nose", "sneezing", "cough", "sore_throat", "mild_fever"],
 "Flu": ["high_fever", "body_aches", "fatigue", "dry_cough", "headache"],
@@ -145,6 +136,16 @@ def index():
 "Schizophrenia": "Take prescribed medication and attend therapy sessions regularly.",
 "PTSD": "Seek trauma-focused therapy and mental health support."
 }
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    # Initialize variables
+    Result = {}
+    results = {}
+    Percentages = set()
+    Top_Three = []
+    Recommendation = {}
+
     current_date = datetime.now().strftime("%B %d, %Y at %I:%M %p")
     
     if request.method == "POST":
@@ -181,6 +182,7 @@ def index():
 if __name__ == "__main__":
 
     app.run(debug=True, port=5000)
+
 
 
 
