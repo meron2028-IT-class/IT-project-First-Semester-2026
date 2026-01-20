@@ -31,12 +31,12 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="welcome-section">
-                <h3><i class="fas fa-stethoscope"></i> How Are You Feeling Today?</h3>
-                <p class="intro-text">Hey there! Not feeling your best? This tool helps you figure out what might be going on. Just check off how you're feeling, and we'll give you some ideas about what it could be and what to do next.</p>
+                <h3><i class="fas fa-stethoscope"></i> Symptom Assessment Tool</h3>
+                <p class="intro-text">This tool helps Haile-Manas students identify common health concerns. Select any symptoms you're experiencing to receive guidance on potential conditions and appropriate next steps within our campus healthcare system.</p>
                 
                 <div class="disclaimer-box">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Important: Read This First</h4>
-                    <p><strong>This isn't a doctor</strong> - it's just a tool to help you decide if you should see the school nurse. If you're really not feeling well, always go see Nurse Sarah in the health center!</p>
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                    <p>This is a <strong>preliminary guidance tool only</strong> for Haile-Manas Academy students. It does NOT replace professional medical advice. Always consult with the school nurse or a healthcare professional for proper diagnosis and treatment.</p>
                 </div>
             </div>
 
@@ -44,10 +44,10 @@
             <form method="POST" class="symptom-form" id="symptomForm">
                 <div class="form-section">
                     <h4><i class="fas fa-clipboard-list"></i> Select Your Symptoms:</h4>
-                    <p class="form-instruction">Check all that sound like how you're feeling right now:</p>
+                    <p class="form-instruction">Check all symptoms that apply to you</p>
                     
                     <div class="symptoms-grid">
-                        <!-- Basic Symptoms (matching Python) -->
+                        <!-- Row 1 -->
                         <label class="symptom-option">
                             <input type="checkbox" name="symptoms" value="fever">
                             <span class="checkmark"></span>
@@ -78,6 +78,7 @@
                             </span>
                         </label>
                         
+                        <!-- Row 2 -->
                         <label class="symptom-option">
                             <input type="checkbox" name="symptoms" value="sore_throat">
                             <span class="checkmark"></span>
@@ -108,6 +109,7 @@
                             </span>
                         </label>
                         
+                        <!-- Row 3 -->
                         <label class="symptom-option">
                             <input type="checkbox" name="symptoms" value="body_aches">
                             <span class="checkmark"></span>
@@ -124,7 +126,7 @@
                             <span class="symptom-text">
                                 <i class="fas fa-wind symptom-icon"></i>
                                 <strong>Runny Nose</strong>
-                                <small>Nasal discharge</small>
+                                <small>Nasal congestion</small>
                             </span>
                         </label>
                         
@@ -135,67 +137,6 @@
                                 <i class="fas fa-snowflake symptom-icon"></i>
                                 <strong>Chills</strong>
                                 <small>Feeling cold/shivering</small>
-                            </span>
-                        </label>
-                        
-                        <!-- Additional symptoms to match Python dictionary -->
-                        <label class="symptom-option">
-                            <input type="checkbox" name="symptoms" value="sneezing">
-                            <span class="checkmark"></span>
-                            <span class="symptom-text">
-                                <i class="fas fa-wind symptom-icon"></i>
-                                <strong>Sneezing</strong>
-                                <small>Frequent sneezing</small>
-                            </span>
-                        </label>
-                        
-                        <label class="symptom-option">
-                            <input type="checkbox" name="symptoms" value="shortness_of_breath">
-                            <span class="checkmark"></span>
-                            <span class="symptom-text">
-                                <i class="fas fa-wind symptom-icon"></i>
-                                <strong>Shortness of Breath</strong>
-                                <small>Difficulty breathing</small>
-                            </span>
-                        </label>
-                        
-                        <label class="symptom-option">
-                            <input type="checkbox" name="symptoms" value="chest_pain">
-                            <span class="checkmark"></span>
-                            <span class="symptom-text">
-                                <i class="fas fa-heart symptom-icon"></i>
-                                <strong>Chest Pain</strong>
-                                <small>Chest discomfort or pain</small>
-                            </span>
-                        </label>
-                        
-                        <label class="symptom-option">
-                            <input type="checkbox" name="symptoms" value="vomiting">
-                            <span class="checkmark"></span>
-                            <span class="symptom-text">
-                                <i class="fas fa-stomach symptom-icon"></i>
-                                <strong>Vomiting</strong>
-                                <small>Throwing up</small>
-                            </span>
-                        </label>
-                        
-                        <label class="symptom-option">
-                            <input type="checkbox" name="symptoms" value="diarrhea">
-                            <span class="checkmark"></span>
-                            <span class="symptom-text">
-                                <i class="fas fa-stomach symptom-icon"></i>
-                                <strong>Diarrhea</strong>
-                                <small>Loose, watery stools</small>
-                            </span>
-                        </label>
-                        
-                        <label class="symptom-option">
-                            <input type="checkbox" name="symptoms" value="rash">
-                            <span class="checkmark"></span>
-                            <span class="symptom-text">
-                                <i class="fas fa-allergies symptom-icon"></i>
-                                <strong>Rash</strong>
-                                <small>Skin irritation or bumps</small>
                             </span>
                         </label>
                     </div>
@@ -216,60 +157,27 @@
             <div class="results-section">
                 <div class="results-header">
                     <h3><i class="fas fa-clipboard-check"></i> Assessment Results</h3>
-                    <div class="timestamp">{{ date }}</div>
+                    <div class="timestamp"> date </div>
                 </div>
-
+                
                 <div class="results-container">
                     <div class="probability-section">
                         <h4><i class="fas fa-chart-line"></i> Possible Conditions</h4>
-                        <p class="results-note">Based on what you told us, here's what it might be. Remember, this is just a guess - the nurse will know for sure!</p>
+                        <p class="results-note">Based on your selected symptoms, here are the most likely conditions:</p>
                         
                         <div class="disease-cards">
                             {% for disease, percent in results %}
                             <div class="disease-card {% if loop.index == 1 %}primary-card{% endif %}">
                                 <div class="disease-header">
-                                    <h5>{{ disease }}</h5>
-                                    <div class="probability-badge">{{ percent }}% match</div>
+                                    <h5>disease </h5>
+                                    <div class="probability-badge">percent % match</div>
                                 </div>
                                 <div class="probability-bar">
-                                    <div class="probability-fill" style="width: {{ percent }}%"></div>
+                                   
                                 </div>
                                 <div class="disease-description">
-                                    {% if disease == "Common Cold" %}
-                                    Mild viral infection affecting nose and throat
-                                    {% elif disease == "Flu" %}
-                                    Viral respiratory illness with sudden onset
-                                    {% elif disease == "COVID-19" %}
-                                    Respiratory illness caused by coronavirus
-                                    {% elif disease == "Pneumonia" %}
-                                    Infection that inflames air sacs in lungs
-                                    {% elif disease == "Asthma" %}
-                                    Condition where airways narrow and swell
-                                    {% elif disease == "Bronchitis" %}
-                                    Inflammation of bronchial tubes
-                                    {% elif disease == "Malaria" %}
-                                    Mosquito-borne infectious disease
-                                    {% elif disease == "Dengue" %}
-                                    Mosquito-borne tropical disease
-                                    {% elif disease == "Typhoid" %}
-                                    Bacterial infection causing high fever
-                                    {% elif disease == "Food Poisoning" %}
-                                    Illness from contaminated food
-                                    {% elif disease == "Hypertension" %}
-                                    High blood pressure condition
-                                    {% elif disease == "Diabetes Type 2" %}
-                                    Chronic condition affecting blood sugar
-                                    {% elif disease == "Allergic Rhinitis" %}
-                                    Allergic response causing nasal symptoms
-                                    {% elif disease == "Migraine" %}
-                                    Severe headache often with nausea
-                                    {% elif disease == "Depression" %}
-                                    Mood disorder causing persistent sadness
-                                    {% elif disease == "Anxiety Disorder" %}
-                                    Excessive worry and nervousness
-                                    {% else %}
-                                    Consult nurse for specific information
-                                    {% endif %}
+                                    <!-- Descriptions will be added by your Python logic -->
+                                    Consult with school nurse for details
                                 </div>
                             </div>
                             {% endfor %}
@@ -280,14 +188,14 @@
                         <h4><i class="fas fa-hand-holding-medical"></i> Recommended Actions</h4>
                         <div class="recommendation-card">
                             <div class="recommendation-icon">
-                                {% if "URGENT" in recommendation or "emergency" in recommendation.lower() or "immediate" in recommendation.lower() %}
+                                {% if "URGENT" in recommendation %}
                                 <i class="fas fa-exclamation-circle urgent-icon"></i>
                                 {% else %}
                                 <i class="fas fa-shield-alt"></i>
                                 {% endif %}
                             </div>
                             <div class="recommendation-content">
-                                <h5>What You Should Do:</h5>
+                                <h5>Primary Recommendation</h5>
                                 <p>{{ recommendation }}</p>
                                 
                                 <div class="next-steps">
@@ -305,7 +213,7 @@
                 </div>
                 
                 <div class="final-disclaimer">
-                    <p><i class="fas fa-info-circle"></i> <strong>Remember:</strong> This is just a helper tool. Only Nurse Sarah or a real doctor can tell you what's actually wrong and what medicine you need.</p>
+                    <p><i class="fas fa-info-circle"></i> This assessment is for Haile-Manas Academy students only. The school nurse makes final determinations regarding student health, medication, and isolation requirements according to Ethiopian health guidelines.</p>
                 </div>
             </div>
             {% endif %}
@@ -344,7 +252,7 @@
                 <div class="footer-brand">
                     <h4>Haile-Manas Academy Wellness Center</h4>
                     <p>Part of Ethiopia Education Initiatives | January 2026</p>
-                    <p class="ethiopian-flag">🇪🇹 Serving Ethiopia's future leaders since 2022</p>
+                    <p class="ethiopian-flag">ðªð¹ Serving Ethiopia's future leaders since 2022</p>
                 </div>
                 <div class="footer-info">
                     <p><i class="fas fa-map-marker-alt"></i> Health Center, Main Administration Building</p>
@@ -353,7 +261,7 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                <p>© 2026 Haile-Manas Academy, Addis Ababa, Ethiopia. This tool is for internal educational use by students and staff.</p>
+                <p>Â© 2026 Haile-Manas Academy, Addis Ababa, Ethiopia. This tool is for internal educational use by students and staff.</p>
             </div>
         </footer>
     </div>
