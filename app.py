@@ -168,10 +168,10 @@ def index():
         for j in Top_Three:
             for i in results:
                 if results[i] == j:
-                    Results[i] = [i, j, recommendations[i]]
+                    Results[i] = [i, j]
     # Render template with results
     return render_template("index.html", 
-                         results=results, 
+                         results=Results, 
                          recommendation=recommendation,
                          date=current_date)
 
@@ -179,3 +179,4 @@ def index():
 if __name__ == "__main__":
 
     app.run(debug=True, port=5000)
+
