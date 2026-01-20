@@ -174,12 +174,13 @@ def index():
     # Render template with results
     return render_template("index.html", 
                          results=Results, 
-                         recommendation=recommendation,
+                         recommendation=Recommendation,
                          date=current_date)
 
 # Run the app
 if __name__ == "__main__":
 
     app.run(debug=True, port=5000)
+
 
 
