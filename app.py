@@ -19,6 +19,7 @@ def index():
     results = {}
     Percentages = set()
     Top_Three = []
+    Recommendation = {}
     Diseases = {
         "Common Cold": ["runny_nose", "sneezing", "cough", "sore_throat", "mild_fever"],
 "Flu": ["high_fever", "body_aches", "fatigue", "dry_cough", "headache"],
@@ -156,7 +157,7 @@ def index():
                 if symptom in Diseases[disease]:
                     Symptom_Count = Symptom_Count + 1
             results[disease] = (((Symptom_Count)/(5)) * (100))
-            Percentages.append(results[disease])
+            Percentages.add(results[disease])
         if len(Percentages) > 3:
             for i in range(3):
                 Max = max(Percentages)
@@ -169,6 +170,7 @@ def index():
             for i in results:
                 if results[i] == j:
                     Results[i] = [i, j]
+                    recommendations[i] = Recommendation
     # Render template with results
     return render_template("index.html", 
                          results=Results, 
@@ -179,4 +181,5 @@ def index():
 if __name__ == "__main__":
 
     app.run(debug=True, port=5000)
+
 
