@@ -159,8 +159,7 @@ def index():
                 Top_Three.append(Max)
                 Percentages.remove(Max)
         else:
-            for i in Percentages:
-                Top_Three.append(i)
+            Top_Three = list(Percentages)
         for j in Top_Three:
             for disease in results:
                 if results[disease] == j:
@@ -174,6 +173,7 @@ def index():
 if __name__ == "__main__":
 
     app.run(debug=True, port=5000)
+
 
 
 
