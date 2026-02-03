@@ -1,16 +1,9 @@
 from flask import Flask, render_template, request
 from datetime import datetime
 
-# Initialize Flask app
+
 app = Flask(__name__)
 
-# Your data structures will go here
-# diseases = {}
-# recommendations = {}
-
-# Your functions will go here
-# def calculate_disease_probability(selected_symptoms):
-#     pass
 Diseases = {
 "Common Cold": ["runny_nose", "sneezing", "cough", "sore_throat", "mild_fever"],
 "Flu": ["high_fever", "body_aches", "fatigue", "dry_cough", "headache"],
@@ -139,7 +132,7 @@ recommendations = {
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    # Initialize variables
+    
     Result = {}
     results = {}
     Percentages = set()
@@ -149,7 +142,7 @@ def index():
     current_date = datetime.now().strftime("%B %d, %Y at %I:%M %p")
     
     if request.method == "POST":
-        # Get selected symptoms from form
+        
         selected_symptoms = request.form.getlist("symptoms")
 
         for disease in Diseases:
@@ -173,16 +166,15 @@ def index():
                 if results[disease] == j:
                     Results[disease] = j
                     recommendations[disease] = Recommendation
-    # Render template with results
     return render_template("index.html", 
                          results=Result, 
                          recommendation=Recommendation,
                          date=current_date)
 
-# Run the app
 if __name__ == "__main__":
 
     app.run(debug=True, port=5000)
+
 
 
 
