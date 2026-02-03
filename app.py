@@ -11,8 +11,8 @@ app = Flask(__name__)
 # Your functions will go here
 # def calculate_disease_probability(selected_symptoms):
 #     pass
-    Diseases = {
-        "Common Cold": ["runny_nose", "sneezing", "cough", "sore_throat", "mild_fever"],
+Diseases = {
+"Common Cold": ["runny_nose", "sneezing", "cough", "sore_throat", "mild_fever"],
 "Flu": ["high_fever", "body_aches", "fatigue", "dry_cough", "headache"],
 "COVID-19": ["fever", "dry_cough", "loss_of_taste", "fatigue", "shortness_of_breath"],
 "Pneumonia": ["chest_pain", "cough", "fever", "shortness_of_breath", "fatigue"],
@@ -74,7 +74,7 @@ app = Flask(__name__)
 "PTSD": ["flashbacks", "nightmares", "anxiety", "emotional_numbness", "hypervigilance"]
 
     }
-    recommendations = {
+recommendations = {
 "Common Cold": "Drink plenty of fluids, rest well, and use warm saltwater gargles for throat relief.",
 "Flu": "Rest at home, stay hydrated, and consult a doctor if symptoms become severe.",
 "COVID-19": "Isolate yourself, get tested, monitor oxygen levels, and seek medical care if breathing difficulty occurs.",
@@ -157,24 +157,25 @@ def index():
             for symptom in selected_symptoms:
                 if symptom in Diseases[disease]:
                     Symptom_Count = Symptom_Count + 1
-            results[disease] = (((Symptom_Count)/(5)) * (100))
+            if Symptom_Count > 0:
+                results[disease] = (((Symptom_Count)/(5)) * (100))
             Percentages.add(results[disease])
         if len(Percentages) > 3:
             for i in range(3):
                 Max = max(Percentages)
-                Top_Three.append(Max))
+                Top_Three.append(Max)
                 Percentages.remove(Max)
         else:
             for i in Percentages:
                 Top_Three.append(i)
         for j in Top_Three:
-            for i in results:
-                if results[i] == j:
-                    Results[i] = [i, j]
-                    recommendations[i] = Recommendation
+            for disease in results:
+                if results[disease] == j:
+                    Results[disease] = j
+                    recommendations[disease] = Recommendation
     # Render template with results
     return render_template("index.html", 
-                         results=Results, 
+                         results=Result, 
                          recommendation=Recommendation,
                          date=current_date)
 
@@ -182,6 +183,7 @@ def index():
 if __name__ == "__main__":
 
     app.run(debug=True, port=5000)
+
 
 
 
